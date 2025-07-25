@@ -1,0 +1,20 @@
+using UnityEngine;
+
+public class SongManager : MonoBehaviour
+{
+    public static SongManager Instance;
+    public AudioClip selectedSong;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+}
